@@ -6,7 +6,7 @@ export default {
   title: 'Components/Button',
   component: Button,
   args: {
-    children: 'Ignite Lab Design System'
+    children: 'Create Account'
   },
   argTypes: {}
 } as Meta<ButtonProps>;
