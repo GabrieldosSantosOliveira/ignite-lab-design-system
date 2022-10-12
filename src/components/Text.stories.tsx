@@ -30,10 +30,13 @@ export const Large: StoryObj<TextProps> = {
 export const CustomComponent: StoryObj<TextProps> = {
   args: {
     asChild: true,
-    children: <p>Testando</p>
+    children: <p>Text with p</p>
   },
   argTypes: {
     children: {
+      table: { disable: true }
+    },
+    asChild: {
       table: { disable: true }
     }
   }
