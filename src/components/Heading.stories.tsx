@@ -1,10 +1,10 @@
 import { Meta, StoryObj } from '@storybook/react';
 
-import { Text } from './Heading';
+import { Heading } from './Heading';
 import { HeadingProps } from './Heading';
 export default {
-  title: 'Components/Text',
-  component: Text,
+  title: 'Components/Heading',
+  component: Heading,
   args: {
     children: 'Ignite Lab Design System',
     size: 'md'
@@ -30,10 +30,13 @@ export const Large: StoryObj<HeadingProps> = {
 export const CustomComponent: StoryObj<HeadingProps> = {
   args: {
     asChild: true,
-    children: <p>Testando</p>
+    children: <h1>Heading with H1</h1>
   },
   argTypes: {
     children: {
+      table: { disable: true }
+    },
+    asChild: {
       table: { disable: true }
     }
   }
