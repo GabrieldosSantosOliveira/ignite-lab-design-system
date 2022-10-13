@@ -9,7 +9,7 @@ import { TextInput } from './components/TextInput';
 import { Logo } from './Logo';
 function App() {
   return (
-    <div className="w-screen h-screen bg-gray-900 flex flex-col items-center justify-center text-gray-100">
+    <div className=" m-0 p-3 w-screen max-w-full min-h-screen bg-gray-900 flex flex-col items-center justify-center text-gray-100">
       <header className="flex flex-col items-center">
         <Logo />
         <Heading size="lg" className="mt-4">
@@ -67,6 +67,24 @@ function App() {
           Entrar na plataforma
         </Button>
       </form>
+      <footer className="flex flex-col items-center gap-4 mt-8">
+        <Text asChild size="sm">
+          <a
+            href=""
+            className="text-gray-400 underline hover:text-gray-200"
+          >
+            Esqueceu sua senha?
+          </a>
+        </Text>
+        <Text asChild size="sm">
+          <a
+            href=""
+            className="text-gray-400 underline hover:text-gray-200"
+          >
+            Não possui conta? Crie uma agora!
+          </a>
+        </Text>
+      </footer>
     </div>
   );
 }
