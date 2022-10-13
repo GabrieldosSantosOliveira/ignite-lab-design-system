@@ -1,6 +1,8 @@
 import './styles/global.css';
 import { Envelope, Lock } from 'phosphor-react';
 
+import { Button } from './components/Button';
+import { Checkbox } from './components/Checkbox';
 import { Heading } from './components/Heading';
 import { Text } from './components/Text';
 import { TextInput } from './components/TextInput';
@@ -37,7 +39,7 @@ function App() {
           </TextInput.Root>
         </label>
         <label
-          htmlFor="email"
+          htmlFor="password"
           className="flex flex-col gap-3"
         >
           <Text className="font-semibold">Sua senha</Text>
@@ -52,6 +54,18 @@ function App() {
             />
           </TextInput.Root>
         </label>
+        <label
+          htmlFor="remember"
+          className="flex items-center gap-2"
+        >
+          <Checkbox id="remember" />
+          <Text size="sm" className="text-gray-200">
+            Lembrar de mim por 30 dias
+          </Text>
+        </label>
+        <Button type="submit" className="mt-4">
+          Entrar na plataforma
+        </Button>
       </form>
     </div>
   );
