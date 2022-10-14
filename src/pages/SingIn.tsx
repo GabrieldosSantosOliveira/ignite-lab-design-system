@@ -1,4 +1,6 @@
+import axios from 'axios';
 import { Envelope, Lock } from 'phosphor-react';
+import { FormEvent, useState } from 'react';
 
 import { Button } from './../components/Button';
 import { Checkbox } from './../components/Checkbox';
@@ -7,6 +9,16 @@ import { Text } from './../components/Text';
 import { TextInput } from './../components/TextInput';
 import { Logo } from './../Logo';
 export const SingIn = () => {
+  const [isUserSignedIn, setIsUserSignedIn] =
+    useState(false);
+  const handleSingIn = async (event: FormEvent) => {
+    event.preventDefault();
+    await axios.post('/sessions', {
+      email: 'gabrielsantosoliveira951@gmail.com',
+      password: '12345678'
+    });
+    setIsUserSignedIn(true);
+  };
   return (
     <div className=" m-0 p-3 w-screen max-w-full min-h-screen bg-gray-900 flex flex-col items-center justify-center text-gray-100">
       <header className="flex flex-col items-center">
@@ -18,7 +30,11 @@ export const SingIn = () => {
           Faça login e comece a usar!
         </Text>
       </header>
-      <form className="flex flex-col gap-4 items-stretch w-full max-w-sm mt-10">
+      <form
+        onSubmit={handleSingIn}
+        className="flex flex-col gap-4 items-stretch w-full max-w-sm mt-10"
+      >
+        {isUserSignedIn && <Text>Login realizado!</Text>}
         <label
           htmlFor="email"
           className="flex flex-col gap-3"
