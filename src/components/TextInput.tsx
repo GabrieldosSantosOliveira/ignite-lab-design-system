@@ -1,7 +1,13 @@
 import { Slot } from '@radix-ui/react-slot';
 import React from 'react';
+import { UseFormRegister } from 'react-hook-form';
 export type TextInputInputProps =
-  React.InputHTMLAttributes<HTMLInputElement>;
+  React.InputHTMLAttributes<HTMLInputElement> &
+    ReturnType<
+      UseFormRegister<{
+        [key: string]: unknown;
+      }>
+    >;
 
 export interface TextInputRootProps {
   children: React.ReactNode;
@@ -32,16 +38,18 @@ const TextInputIcon: React.FC<TextInputIconProps> = ({
   );
 };
 TextInputIcon.displayName = 'TextInput.Icon';
-const TextInputInput: React.FC<TextInputInputProps> = ({
-  ...props
-}) => {
+const TextInputInput = React.forwardRef<
+  HTMLInputElement,
+  TextInputInputProps
+>(({ ...props }, ref) => {
   return (
     <input
       className="outline-none bg-transparent flex-1 text-gray-100 text-xs placeholder:text-gray-400"
       {...props}
+      ref={ref}
     />
   );
-};
+});
 TextInputInput.displayName = 'TextInput.Input';
 
 export const TextInput = {
