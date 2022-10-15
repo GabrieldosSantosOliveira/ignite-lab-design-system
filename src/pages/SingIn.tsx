@@ -1,6 +1,8 @@
-import axios from 'axios';
+import Cookies from 'js-cookie';
 import { Envelope, Lock } from 'phosphor-react';
-import { FormEvent, useState } from 'react';
+import { useState } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { Link } from 'react-router-dom';
 
 import { Button } from './../components/Button';
 import { Checkbox } from './../components/Checkbox';
@@ -8,15 +10,24 @@ import { Heading } from './../components/Heading';
 import { Text } from './../components/Text';
 import { TextInput } from './../components/TextInput';
 import { Logo } from './../Logo';
+import { api } from './../services/api';
+type Form = {
+  email: string;
+  password: string;
+};
 export const SingIn = () => {
+  const { register, handleSubmit } = useForm<Form>();
   const [isUserSignedIn, setIsUserSignedIn] =
     useState(false);
-  const handleSingIn = async (event: FormEvent) => {
-    event.preventDefault();
-    await axios.post('/sessions', {
-      email: 'gabrielsantosoliveira951@gmail.com',
-      password: '12345678'
+  const handleSingIn: SubmitHandler<
+    Form
+  > = async formValues => {
+    const { data } = await api.post('/auth', formValues);
+    Cookies.set('token', data.token, {
+      expires: 1,
+      sameSite: 'strict'
     });
+    console.log(data);
     setIsUserSignedIn(true);
   };
   return (
@@ -31,7 +42,7 @@ export const SingIn = () => {
         </Text>
       </header>
       <form
-        onSubmit={handleSingIn}
+        onSubmit={handleSubmit(handleSingIn)}
         className="flex flex-col gap-4 items-stretch w-full max-w-sm mt-10"
       >
         {isUserSignedIn && <Text>Login realizado!</Text>}
@@ -48,8 +59,10 @@ export const SingIn = () => {
             </TextInput.Icon>
             <TextInput.Input
               id="email"
-              type="email"
+              type="text"
               placeholder="Digite seu e-mail"
+              autoComplete="email"
+              {...register('email')}
             />
           </TextInput.Root>
         </label>
@@ -66,6 +79,8 @@ export const SingIn = () => {
               id="password"
               type="password"
               placeholder="**********"
+              autoComplete="current-password"
+              {...register('password')}
             />
           </TextInput.Root>
         </label>
@@ -84,20 +99,20 @@ export const SingIn = () => {
       </form>
       <footer className="flex flex-col items-center gap-4 mt-8">
         <Text asChild size="sm">
-          <a
-            href=""
+          <Link
+            to="/"
             className="text-gray-400 underline hover:text-gray-200"
           >
             Esqueceu sua senha?
-          </a>
+          </Link>
         </Text>
         <Text asChild size="sm">
-          <a
-            href=""
+          <Link
+            to="/Register"
             className="text-gray-400 underline hover:text-gray-200"
           >
             Não possui conta? Crie uma agora!
-          </a>
+          </Link>
         </Text>
       </footer>
     </div>
