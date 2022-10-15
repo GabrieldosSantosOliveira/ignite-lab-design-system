@@ -5,7 +5,7 @@ import {
   useForm,
   Controller
 } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { Button } from './../components/Button';
 import { Checkbox } from './../components/Checkbox';
@@ -23,6 +23,7 @@ type Form = {
 };
 export const Register = () => {
   const [acceptTerms, setAcceptTerms] = useState<boolean>();
+  const navigate = useNavigate();
   const { register, handleSubmit, control } =
     useForm<Form>();
 
@@ -44,6 +45,7 @@ export const Register = () => {
         })
         .then(() => alert('Cadastrado com sucesso!'))
         .catch(() => alert('Erro ao cadastrar!'));
+      navigate('/SingIn');
     } else {
       setAcceptTerms(false);
     }

@@ -1,8 +1,7 @@
 import Cookies from 'js-cookie';
 import { Envelope, Lock } from 'phosphor-react';
-import { useState } from 'react';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { Button } from './../components/Button';
 import { Checkbox } from './../components/Checkbox';
@@ -17,8 +16,8 @@ type Form = {
 };
 export const SingIn = () => {
   const { register, handleSubmit } = useForm<Form>();
-  const [isUserSignedIn, setIsUserSignedIn] =
-    useState(false);
+  const navigate = useNavigate();
+
   const handleSingIn: SubmitHandler<
     Form
   > = async formValues => {
@@ -27,8 +26,7 @@ export const SingIn = () => {
       expires: 1,
       sameSite: 'strict'
     });
-    console.log(data);
-    setIsUserSignedIn(true);
+    navigate('/Menu');
   };
   return (
     <div className=" m-0 p-3 w-screen max-w-full min-h-screen bg-gray-900 flex flex-col items-center justify-center text-gray-100">
@@ -45,7 +43,6 @@ export const SingIn = () => {
         onSubmit={handleSubmit(handleSingIn)}
         className="flex flex-col gap-4 items-stretch w-full max-w-sm mt-10"
       >
-        {isUserSignedIn && <Text>Login realizado!</Text>}
         <label
           htmlFor="email"
           className="flex flex-col gap-3"
