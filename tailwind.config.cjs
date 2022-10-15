@@ -25,7 +25,8 @@ module.exports = {
       cyan: {
         500: '#81d8f7',
         300: '#9BE1FB'
-      }
+      },
+      red: { 500: 'rgb(239 68 68)' }
     },
     extend: {
       fontFamily: {
