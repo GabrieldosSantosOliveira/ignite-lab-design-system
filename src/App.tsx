@@ -1,7 +1,14 @@
 import './styles/global.css';
-import { SingIn } from './pages/SingIn';
+import { BrowserRouter } from 'react-router-dom';
+
+import { MainRoutes as Routes } from './routes';
+
 function App() {
-  return <SingIn />;
+  return (
+    <BrowserRouter>
+      <Routes />
+    </BrowserRouter>
+  );
 }
 
 export { App };
