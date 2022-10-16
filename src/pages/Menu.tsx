@@ -33,7 +33,7 @@ export const Menu = () => {
           Ignite Lab
         </Heading>
         <Text size="lg" className="text-gray-400 mt-1">
-          Faça seu cadastro e comece a usar!
+          Visualize todos os nossos usuários!
         </Text>
       </header>
       <main className="flex flex-col items-center gap-4 mt-8">
