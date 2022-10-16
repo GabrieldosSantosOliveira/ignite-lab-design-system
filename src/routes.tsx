@@ -13,6 +13,7 @@ export const MainRoutes = () => {
       <Route path="/Register" element={<Register />} />
       <Route path="/Menu" element={<Menu />} />
       <Route path="/Update/:id" element={<Update />} />
+      <Route path="*" element={<Home />} />
     </Routes>
   );
 };
