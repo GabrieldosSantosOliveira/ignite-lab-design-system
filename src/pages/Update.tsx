@@ -37,7 +37,7 @@ export const Update = () => {
     Form
   > = async formValues => {
     await api
-      .put('/user', formValues)
+      .put(`/user/${id}`, formValues)
       .then(() => alert('Atualizado com sucesso!'))
       .catch(() => alert('Erro ao atualizar!'));
   };
