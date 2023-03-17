@@ -15,9 +15,6 @@ código com o React usando o StoryBook para documentar os componentes
 ##### Npm
 
 ## Baixar e Rodar
-## Acessar pelo Link
-Acesse o Link: [https://ignite-lab-design-system-nlr4ckh4i-gabrieldossantosoliveira.vercel.app/](https://ignite-lab-design-system-nlr4ckh4i-gabrieldossantosoliveira.vercel.app/)
-
 ## Rodar Localmente
 Como baixar
 ```bash
