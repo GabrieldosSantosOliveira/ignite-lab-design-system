@@ -36,17 +36,17 @@ npm run dev
 
 # Tecnologias Utilizadas
 
-##### Git
-##### React
-##### Prettier
-##### Eslint
-##### React-Hook-Form
-##### React Router Dom
-##### Axios
-##### Typescript
+- Git
+-  React
+- Prettier
+- Eslint
+- React-Hook-Form
+- React Router Dom
+- Axios
+- Typescript
 
-# Contribuidores
-Desenvolvedor: [Gabriel dos Santos Oliveira](https://www.linkedin.com/in/gabriel-dos-santos-oliveira-24b67b243/)
-
+## Autor
+| [<img src="https://avatars.githubusercontent.com/u/86084272?v=4" width=115><br><sub>Gabriel Oliveira</sub>](https://www.linkedin.com/in/gabriel-dos-santos-oliveira-24b67b243/)
+| :---: | 
 
 
