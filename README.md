@@ -6,17 +6,25 @@
 Este projeto foi desenvolvido durante a semana do Ignite Lab da Rocketseat, no qual iniciamos o desenvolvimento pelo Figma e passamos para o 
 código com o React usando o StoryBook para documentar os componentes
 
-# 🔧 Como Rodar
+## 🛠️ Tecnologias Utilizadas
 
-## Tecnologias Necessarias
+- Git
+-  React
+- Prettier
+- Eslint
+- React-Hook-Form
+- React Router Dom
+- Axios
+- Typescript
 
+### ✔️ Pré Requisitos
 ##### Git
 ##### Node
 ##### Npm
 
-## Baixar e Rodar
-## Rodar Localmente
-Como baixar
+## 🚀 Como executar
+
+Clone o repositório
 ```bash
 git clone https://github.com/GabrieldosSantosOliveira/ignite-lab-design-system.git
 ```
@@ -34,16 +42,6 @@ Rode o comando
 npm run dev
 ```
 
-# Tecnologias Utilizadas
-
-- Git
--  React
-- Prettier
-- Eslint
-- React-Hook-Form
-- React Router Dom
-- Axios
-- Typescript
 
 ## Autor
 | [<img src="https://avatars.githubusercontent.com/u/86084272?v=4" width=115><br><sub>Gabriel Oliveira</sub>](https://www.linkedin.com/in/gabriel-dos-santos-oliveira-24b67b243/)
