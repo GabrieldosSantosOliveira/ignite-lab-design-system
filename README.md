@@ -17,10 +17,10 @@ código com o React usando o StoryBook para documentar os componentes
 - Axios
 - Typescript
 
-### ✔️ Pré Requisitos
-##### Git
-##### Node
-##### Npm
+## ✔️ Pré Requisitos
+- Git
+- Node
+- Npm
 
 ## 🚀 Como executar
 
