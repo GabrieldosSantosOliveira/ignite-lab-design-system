@@ -1,10 +1,6 @@
 import { Envelope, Lock } from 'phosphor-react';
 import { useState } from 'react';
-import {
-  SubmitHandler,
-  useForm,
-  Controller
-} from 'react-hook-form';
+import { SubmitHandler, useForm, Controller } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
 
 import { Button } from './../components/Button';
@@ -24,15 +20,14 @@ type Form = {
 export const Register = () => {
   const [acceptTerms, setAcceptTerms] = useState<boolean>();
   const navigate = useNavigate();
-  const { register, handleSubmit, control } =
-    useForm<Form>();
+  const { register, handleSubmit, control } = useForm<Form>();
 
   const handleSingIn: SubmitHandler<Form> = async ({
     email,
     firstName,
     lastName,
     password,
-    terms
+    terms,
   }) => {
     if (terms) {
       setAcceptTerms(true);
@@ -41,7 +36,7 @@ export const Register = () => {
           email,
           firstName,
           lastName,
-          password
+          password,
         })
         .then(() => alert('Cadastrado com sucesso!'))
         .catch(() => alert('Erro ao cadastrar!'));
@@ -65,10 +60,7 @@ export const Register = () => {
         onSubmit={handleSubmit(handleSingIn)}
         className="flex flex-col gap-4 items-stretch w-full max-w-sm mt-10"
       >
-        <label
-          htmlFor="firstName"
-          className="flex flex-col gap-3"
-        >
+        <label htmlFor="firstName" className="flex flex-col gap-3">
           <Text className="font-semibold">Nome</Text>
           <TextInput.Root>
             <TextInput.Input
@@ -80,10 +72,7 @@ export const Register = () => {
             />
           </TextInput.Root>
         </label>
-        <label
-          htmlFor="lastName"
-          className="flex flex-col gap-3"
-        >
+        <label htmlFor="lastName" className="flex flex-col gap-3">
           <Text className="font-semibold">Sobrenome</Text>
           <TextInput.Root>
             <TextInput.Input
@@ -96,13 +85,8 @@ export const Register = () => {
           </TextInput.Root>
         </label>
 
-        <label
-          htmlFor="email"
-          className="flex flex-col gap-3"
-        >
-          <Text className="font-semibold">
-            Endereço de e-mail
-          </Text>
+        <label htmlFor="email" className="flex flex-col gap-3">
+          <Text className="font-semibold">Endereço de e-mail</Text>
           <TextInput.Root>
             <TextInput.Icon>
               <Envelope />
@@ -116,10 +100,7 @@ export const Register = () => {
             />
           </TextInput.Root>
         </label>
-        <label
-          htmlFor="password"
-          className="flex flex-col gap-3"
-        >
+        <label htmlFor="password" className="flex flex-col gap-3">
           <Text className="font-semibold">Sua senha</Text>
           <TextInput.Root>
             <TextInput.Icon>
@@ -135,16 +116,11 @@ export const Register = () => {
           </TextInput.Root>
         </label>
 
-        <label
-          htmlFor="remember"
-          className="flex items-center gap-2"
-        >
+        <label htmlFor="remember" className="flex items-center gap-2">
           <Controller
             control={control}
             name="terms"
-            render={({
-              field: { onChange, onBlur, value }
-            }) => (
+            render={({ field: { onChange, onBlur, value } }) => (
               <Checkbox
                 id="terms"
                 onCheckedChange={onChange}
@@ -154,8 +130,7 @@ export const Register = () => {
             )}
           />
           <Text size="sm" className="text-gray-200">
-            Você concorda com a nossa Política de
-            Privacidade
+            Você concorda com a nossa Política de Privacidade
           </Text>
         </label>
         {acceptTerms === false ? (

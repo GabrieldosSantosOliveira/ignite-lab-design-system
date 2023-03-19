@@ -12,7 +12,8 @@
     "deploy-storybook": "storybook-to-ghpages",
     "test-storybook": "test-storybook",
     "lint": "eslint --ext .ts,.tsx src",
-    "lint:fix": "yarn lint --fix"
+    "lint:fix": "eslint --ext .ts,.tsx src --fix",
+    "format": "prettier -w ."
   },
   "dependencies": {
     "@radix-ui/react-checkbox": "^1.0.0",

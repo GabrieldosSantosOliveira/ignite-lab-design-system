@@ -18,13 +18,11 @@ export const SingIn = () => {
   const { register, handleSubmit } = useForm<Form>();
   const navigate = useNavigate();
 
-  const handleSingIn: SubmitHandler<
-    Form
-  > = async formValues => {
+  const handleSingIn: SubmitHandler<Form> = async (formValues) => {
     const { data } = await api.post('/auth', formValues);
     Cookies.set('token', data.token, {
       expires: 1,
-      sameSite: 'strict'
+      sameSite: 'strict',
     });
     navigate('/Menu');
   };
@@ -43,13 +41,8 @@ export const SingIn = () => {
         onSubmit={handleSubmit(handleSingIn)}
         className="flex flex-col gap-4 items-stretch w-full max-w-sm mt-10"
       >
-        <label
-          htmlFor="email"
-          className="flex flex-col gap-3"
-        >
-          <Text className="font-semibold">
-            Endereço de e-mail
-          </Text>
+        <label htmlFor="email" className="flex flex-col gap-3">
+          <Text className="font-semibold">Endereço de e-mail</Text>
           <TextInput.Root>
             <TextInput.Icon>
               <Envelope />
@@ -63,10 +56,7 @@ export const SingIn = () => {
             />
           </TextInput.Root>
         </label>
-        <label
-          htmlFor="password"
-          className="flex flex-col gap-3"
-        >
+        <label htmlFor="password" className="flex flex-col gap-3">
           <Text className="font-semibold">Sua senha</Text>
           <TextInput.Root>
             <TextInput.Icon>
@@ -81,10 +71,7 @@ export const SingIn = () => {
             />
           </TextInput.Root>
         </label>
-        <label
-          htmlFor="remember"
-          className="flex items-center gap-2"
-        >
+        <label htmlFor="remember" className="flex items-center gap-2">
           <Checkbox id="remember" />
           <Text size="sm" className="text-gray-200">
             Lembrar de mim por 30 dias
@@ -96,10 +83,7 @@ export const SingIn = () => {
       </form>
       <footer className="flex flex-col items-center gap-4 mt-8">
         <Text asChild size="sm">
-          <Link
-            to="/"
-            className="text-gray-400 underline hover:text-gray-200"
-          >
+          <Link to="/" className="text-gray-400 underline hover:text-gray-200">
             Esqueceu sua senha?
           </Link>
         </Text>

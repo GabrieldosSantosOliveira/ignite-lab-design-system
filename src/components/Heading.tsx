@@ -11,7 +11,7 @@ export const Heading: React.FC<HeadingProps> = ({
   size = 'md',
   children,
   asChild,
-  className
+  className,
 }) => {
   const Comp = asChild ? Slot : 'h2';
   return (
@@ -21,9 +21,9 @@ export const Heading: React.FC<HeadingProps> = ({
         {
           'text-lg': size === 'sm',
           'text-xl': size === 'md',
-          'text-2xl': size === 'lg'
+          'text-2xl': size === 'lg',
         },
-        className
+        className,
       )}
     >
       {children}

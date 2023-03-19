@@ -1,12 +1,9 @@
 import { themes } from '@storybook/theming';
 import '../src/styles/global.css';
-import {
-  initialize,
-  mswDecorator
-} from 'msw-storybook-addon';
+import { initialize, mswDecorator } from 'msw-storybook-addon';
 
 initialize({
-  onUnhandledRequest: 'bypass'
+  onUnhandledRequest: 'bypass',
 });
 
 export const decorators = [mswDecorator];
@@ -15,10 +12,10 @@ export const parameters = {
   controls: {
     matchers: {
       color: /(background|color)$/i,
-      date: /Date$/
-    }
+      date: /Date$/,
+    },
   },
   docs: {
-    theme: themes.dark
-  }
+    theme: themes.dark,
+  },
 };

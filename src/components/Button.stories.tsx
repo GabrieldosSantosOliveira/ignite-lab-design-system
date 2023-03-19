@@ -6,8 +6,8 @@ export default {
   title: 'Components/Button',
   component: Button,
   args: {
-    children: 'Create Account'
+    children: 'Create Account',
   },
-  argTypes: {}
+  argTypes: {},
 } as Meta<ButtonProps>;
 export const Default: StoryObj<ButtonProps> = {};

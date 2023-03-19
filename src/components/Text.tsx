@@ -11,7 +11,7 @@ export const Text: React.FC<TextProps> = ({
   size = 'md',
   children,
   asChild,
-  className
+  className,
 }) => {
   const Comp = asChild ? Slot : 'span';
   return (
@@ -21,9 +21,9 @@ export const Text: React.FC<TextProps> = ({
         {
           'text-xs': size === 'sm',
           'text-sm': size === 'md',
-          'text-md': size === 'lg'
+          'text-md': size === 'lg',
         },
-        className
+        className,
       )}
     >
       {children}

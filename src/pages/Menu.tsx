@@ -22,7 +22,7 @@ export const Menu = () => {
     api
       .get('/user')
       .then(({ data }) => setUser(data))
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   }, []);
 
   return (
@@ -37,7 +37,7 @@ export const Menu = () => {
         </Text>
       </header>
       <main className="flex flex-col items-center gap-4 mt-8">
-        {user.map(user => (
+        {user.map((user) => (
           <Card user={user} key={user.id} />
         ))}
       </main>

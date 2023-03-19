@@ -27,15 +27,13 @@ export const Update = () => {
       await api
         .get(`/user/${id}`)
         .then(({ data }) => setUser(data))
-        .catch(err => console.log(err));
+        .catch((err) => console.log(err));
     };
     fetch();
   }, []);
   const { register, handleSubmit } = useForm<Form>();
 
-  const handleSingIn: SubmitHandler<
-    Form
-  > = async formValues => {
+  const handleSingIn: SubmitHandler<Form> = async (formValues) => {
     await api
       .put(`/user/${id}`, formValues)
       .then(() => alert('Atualizado com sucesso!'))
@@ -62,10 +60,7 @@ export const Update = () => {
         onSubmit={handleSubmit(handleSingIn)}
         className="flex flex-col gap-4 items-stretch w-full max-w-sm mt-10"
       >
-        <label
-          htmlFor="firstName"
-          className="flex flex-col gap-3"
-        >
+        <label htmlFor="firstName" className="flex flex-col gap-3">
           <Text className="font-semibold">Nome</Text>
           <TextInput.Root>
             <TextInput.Input
@@ -78,10 +73,7 @@ export const Update = () => {
             />
           </TextInput.Root>
         </label>
-        <label
-          htmlFor="lastName"
-          className="flex flex-col gap-3"
-        >
+        <label htmlFor="lastName" className="flex flex-col gap-3">
           <Text className="font-semibold">Sobrenome</Text>
           <TextInput.Root>
             <TextInput.Input
@@ -95,13 +87,8 @@ export const Update = () => {
           </TextInput.Root>
         </label>
 
-        <label
-          htmlFor="email"
-          className="flex flex-col gap-3"
-        >
-          <Text className="font-semibold">
-            Endereço de e-mail
-          </Text>
+        <label htmlFor="email" className="flex flex-col gap-3">
+          <Text className="font-semibold">Endereço de e-mail</Text>
           <TextInput.Root>
             <TextInput.Icon>
               <Envelope />

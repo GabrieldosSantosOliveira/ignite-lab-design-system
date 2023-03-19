@@ -19,7 +19,7 @@ export const Card: React.FC<CardProps> = ({ user }) => {
       .then(() => {
         window.location.reload();
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   };
 
   return (

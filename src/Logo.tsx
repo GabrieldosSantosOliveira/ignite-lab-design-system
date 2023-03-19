@@ -1,7 +1,7 @@
 import React, { SVGAttributes } from 'react';
 
 type LogoProps = SVGAttributes<HTMLOrSVGElement>;
-export const Logo: React.FC<LogoProps> = props => {
+export const Logo: React.FC<LogoProps> = (props) => {
   return (
     <svg
       width={106}
