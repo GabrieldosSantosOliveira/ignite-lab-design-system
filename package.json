@@ -19,7 +19,7 @@
     "@radix-ui/react-checkbox": "^1.0.0",
     "@radix-ui/react-slot": "^1.0.0",
     "@storybook/addon-a11y": "^6.5.12",
-    "axios": "^1.1.2",
+    "axios": "^1.6.0",
     "clsx": "^1.2.1",
     "js-cookie": "^3.0.1",
     "phosphor-react": "^1.4.1",
